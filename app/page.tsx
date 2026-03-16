@@ -29,6 +29,11 @@ export default function RishikeshOBCCongressWebsite() {
   const [volunteerMessage, setVolunteerMessage] = useState("");
   const [volunteerId, setVolunteerId] = useState("");
 
+  const [trackId, setTrackId] = useState("");
+  const [trackingLoading, setTrackingLoading] = useState(false);
+  const [trackingMessage, setTrackingMessage] = useState("");
+  const [trackingResult, setTrackingResult] = useState<any>(null);
+
   const stats = [
     { label: "जनसमस्याएँ दर्ज", value: "2500+" },
     { label: "क्षेत्रीय दौरे", value: "180+" },
@@ -202,6 +207,42 @@ export default function RishikeshOBCCongressWebsite() {
     }
   };
 
+  const handleTrackComplaint = async (e: React.FormEvent) => {
+    e.preventDefault();
+    setTrackingLoading(true);
+    setTrackingMessage("");
+    setTrackingResult(null);
+
+    try {
+      const response = await fetch("/api/track-complaint", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({ complaintId: trackId }),
+      });
+
+      const result = await response.json();
+
+      if (result.success) {
+        setTrackingResult(result.complaint);
+        setTrackingMessage(
+          "Complaint found successfully. (शिकायत सफलतापूर्वक मिल गई है।)"
+        );
+      } else {
+        setTrackingMessage(
+          result.message || "Complaint ID not found. (शिकायत आईडी नहीं मिली।)"
+        );
+      }
+    } catch {
+      setTrackingMessage(
+        "Server error. Please try again later. (सर्वर त्रुटि, कृपया बाद में पुनः प्रयास करें।)"
+      );
+    } finally {
+      setTrackingLoading(false);
+    }
+  };
+
   return (
     <div className="min-h-screen bg-white text-slate-900">
       <section className="relative overflow-hidden bg-slate-950 text-white">
@@ -331,6 +372,87 @@ export default function RishikeshOBCCongressWebsite() {
               <p className="text-sm leading-7 text-slate-700">{area}</p>
             </div>
           ))}
+        </div>
+      </section>
+
+      <section className="bg-slate-50">
+        <div className="mx-auto max-w-7xl px-6 py-16 lg:px-10">
+          <div className="mb-8">
+            <p className="text-sm font-bold uppercase tracking-[0.25em] text-blue-700">
+              Complaint Tracking
+            </p>
+            <h2 className="mt-2 text-3xl font-black md:text-4xl">
+              Track Complaint by ID
+            </h2>
+          </div>
+
+          <div className="rounded-[32px] bg-white p-8 shadow-xl ring-1 ring-slate-200">
+            <form onSubmit={handleTrackComplaint} className="grid gap-4 md:grid-cols-[1fr_auto]">
+              <input
+                value={trackId}
+                onChange={(e) => setTrackId(e.target.value)}
+                className="rounded-2xl border border-slate-300 px-4 py-4 outline-none focus:ring-2 focus:ring-blue-300"
+                placeholder="Enter Complaint ID (शिकायत आईडी दर्ज करें)"
+                required
+              />
+              <button
+                type="submit"
+                disabled={trackingLoading}
+                className="rounded-2xl bg-blue-600 px-6 py-4 text-sm font-bold text-white shadow-lg disabled:opacity-60"
+              >
+                {trackingLoading ? "Searching..." : "Track Now"}
+              </button>
+            </form>
+
+            {trackingMessage && (
+              <div className="mt-5 rounded-2xl bg-slate-100 px-4 py-4 text-sm text-slate-700">
+                {trackingMessage}
+              </div>
+            )}
+
+            {trackingResult && (
+              <div className="mt-6 grid gap-4 md:grid-cols-2">
+                <div className="rounded-2xl border border-slate-200 bg-slate-50 p-4">
+                  <div className="text-xs font-bold uppercase tracking-[0.2em] text-slate-500">
+                    Complaint ID
+                  </div>
+                  <div className="mt-2 text-base font-bold">{trackingResult.complaintId}</div>
+                </div>
+                <div className="rounded-2xl border border-slate-200 bg-slate-50 p-4">
+                  <div className="text-xs font-bold uppercase tracking-[0.2em] text-slate-500">
+                    Status
+                  </div>
+                  <div className="mt-2 text-base font-bold">{trackingResult.status}</div>
+                </div>
+                <div className="rounded-2xl border border-slate-200 bg-slate-50 p-4">
+                  <div className="text-xs font-bold uppercase tracking-[0.2em] text-slate-500">
+                    Ward
+                  </div>
+                  <div className="mt-2 text-base font-bold">{trackingResult.ward}</div>
+                </div>
+                <div className="rounded-2xl border border-slate-200 bg-slate-50 p-4">
+                  <div className="text-xs font-bold uppercase tracking-[0.2em] text-slate-500">
+                    Category
+                  </div>
+                  <div className="mt-2 text-base font-bold">{trackingResult.category}</div>
+                </div>
+                <div className="rounded-2xl border border-slate-200 bg-slate-50 p-4 md:col-span-2">
+                  <div className="text-xs font-bold uppercase tracking-[0.2em] text-slate-500">
+                    Description
+                  </div>
+                  <div className="mt-2 text-base font-bold">{trackingResult.description}</div>
+                </div>
+                <div className="rounded-2xl border border-slate-200 bg-slate-50 p-4 md:col-span-2">
+                  <div className="text-xs font-bold uppercase tracking-[0.2em] text-slate-500">
+                    Notes
+                  </div>
+                  <div className="mt-2 text-base font-bold">
+                    {trackingResult.notes || "No notes yet"}
+                  </div>
+                </div>
+              </div>
+            )}
+          </div>
         </div>
       </section>
 
