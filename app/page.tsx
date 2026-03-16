@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 export default function RishikeshOBCCongressWebsite() {
   const [formData, setFormData] = useState({
@@ -33,6 +33,13 @@ export default function RishikeshOBCCongressWebsite() {
   const [trackingLoading, setTrackingLoading] = useState(false);
   const [trackingMessage, setTrackingMessage] = useState("");
   const [trackingResult, setTrackingResult] = useState<any>(null);
+ 
+  const [liveStats, setLiveStats] = useState({
+  totalComplaints: 0,
+  pendingCases: 0,
+  resolvedCases: 0,
+  activeVolunteers: 0,
+});
 
   const stats = [
     { label: "Total Complaints", value: "2500+", sub: "कुल शिकायतें" },
@@ -40,6 +47,22 @@ export default function RishikeshOBCCongressWebsite() {
     { label: "Resolved Cases", value: "2080+", sub: "निस्तारित मामले" },
     { label: "Active Volunteers", value: "500+", sub: "सक्रिय स्वयंसेवक" },
   ];
+ useEffect(() => {
+  const fetchAnalytics = async () => {
+    try {
+      const response = await fetch("/api/analytics");
+      const result = await response.json();
+
+      if (result.success) {
+        setLiveStats(result.stats);
+      }
+    } catch (error) {
+      console.error("Analytics fetch failed", error);
+    }
+  };
+
+  fetchAnalytics();
+}, []);
 
   const focusAreas = [
     "Youth Employment & Opportunities – युवाओं को रोजगार, मार्गदर्शन और कौशल विकास से जोड़ने का निरंतर प्रयास।",
