@@ -707,24 +707,43 @@ export default function RishikeshOBCCongressWebsite() {
         </div>
       </section>
 
-      <div className="fixed bottom-5 right-5 z-50 flex flex-col gap-3">
+      <div className="fixed bottom-6 right-6 z-50 flex flex-col gap-3">
+        <a
+          href="tel:+919719339666"
+          className="flex items-center justify-center rounded-full bg-blue-600 px-5 py-4 text-sm font-bold text-white shadow-2xl transition hover:scale-105"
+        >
+          📞 Call Now
+        </a>
+
         <a
           href="https://wa.me/919719339666"
           target="_blank"
           rel="noreferrer"
-          className="rounded-full bg-green-600 px-5 py-4 text-sm font-bold text-white shadow-2xl"
+          className="flex items-center justify-center rounded-full bg-green-600 px-5 py-4 text-sm font-bold text-white shadow-2xl transition hover:scale-105"
         >
-          WhatsApp
+          💬 WhatsApp
         </a>
+
         <button
           onClick={() =>
             document
               .getElementById("complaint-form")
               ?.scrollIntoView({ behavior: "smooth" })
           }
-          className="rounded-full bg-orange-500 px-5 py-4 text-sm font-bold text-white shadow-2xl"
+          className="flex items-center justify-center rounded-full bg-orange-500 px-5 py-4 text-sm font-bold text-white shadow-2xl transition hover:scale-105"
         >
-          Complaint
+          📝 Complaint
+        </button>
+
+        <button
+          onClick={() =>
+            document
+              .getElementById("volunteer-form")
+              ?.scrollIntoView({ behavior: "smooth" })
+          }
+          className="flex items-center justify-center rounded-full bg-purple-600 px-5 py-4 text-sm font-bold text-white shadow-2xl transition hover:scale-105"
+        >
+          🤝 Volunteer
         </button>
       </div>
 
