@@ -34,12 +34,12 @@ export default function RishikeshOBCCongressWebsite() {
   const [trackingMessage, setTrackingMessage] = useState("");
   const [trackingResult, setTrackingResult] = useState<any>(null);
 
- const stats = [
-  { label: "Total Complaints", value: "2500+", sub: "कुल शिकायतें" },
-  { label: "Pending Cases", value: "420+", sub: "लंबित मामले" },
-  { label: "Resolved Cases", value: "2080+", sub: "निस्तारित मामले" },
-  { label: "Active Volunteers", value: "500+", sub: "सक्रिय स्वयंसेवक" },
-];
+  const stats = [
+    { label: "Total Complaints", value: "2500+", sub: "कुल शिकायतें" },
+    { label: "Pending Cases", value: "420+", sub: "लंबित मामले" },
+    { label: "Resolved Cases", value: "2080+", sub: "निस्तारित मामले" },
+    { label: "Active Volunteers", value: "500+", sub: "सक्रिय स्वयंसेवक" },
+  ];
 
   const focusAreas = [
     "Youth Employment & Opportunities – युवाओं को रोजगार, मार्गदर्शन और कौशल विकास से जोड़ने का निरंतर प्रयास।",
@@ -312,17 +312,23 @@ export default function RishikeshOBCCongressWebsite() {
               </div>
 
               <div className="mt-10 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
-  {stats.map((item) => (
-    <div
-      key={item.label}
-      className="rounded-3xl border border-white/10 bg-white/10 p-5 backdrop-blur hover:scale-105 transition"
-    >
-      <div className="text-3xl font-black text-white">{item.value}</div>
-      <div className="mt-2 text-sm font-semibold text-white">{item.label}</div>
-      <div className="mt-1 text-xs text-slate-300">{item.sub}</div>
-    </div>
-  ))}
-</div>
+                {stats.map((item) => (
+                  <div
+                    key={item.label}
+                    className="rounded-3xl border border-white/10 bg-white/10 p-5 backdrop-blur hover:scale-105 transition"
+                  >
+                    <div className="text-3xl font-black text-white">
+                      {item.value}
+                    </div>
+                    <div className="mt-2 text-sm font-semibold text-white">
+                      {item.label}
+                    </div>
+                    <div className="mt-1 text-xs text-slate-300">
+                      {item.sub}
+                    </div>
+                  </div>
+                ))}
+              </div>
             </div>
 
             <div className="relative">
@@ -337,13 +343,19 @@ export default function RishikeshOBCCongressWebsite() {
                 </div>
                 <div className="mt-5 grid gap-3 sm:grid-cols-3">
                   <div className="rounded-2xl bg-orange-500/15 p-4 text-center">
-                    <div className="text-sm font-bold text-orange-300">Rishikesh</div>
+                    <div className="text-sm font-bold text-orange-300">
+                      Rishikesh
+                    </div>
                   </div>
                   <div className="rounded-2xl bg-green-500/15 p-4 text-center">
-                    <div className="text-sm font-bold text-green-300">OBC Vibhag</div>
+                    <div className="text-sm font-bold text-green-300">
+                      OBC Vibhag
+                    </div>
                   </div>
                   <div className="rounded-2xl bg-white/10 p-4 text-center">
-                    <div className="text-sm font-bold text-white">Congress</div>
+                    <div className="text-sm font-bold text-white">
+                      Congress
+                    </div>
                   </div>
                 </div>
               </div>
@@ -462,6 +474,45 @@ export default function RishikeshOBCCongressWebsite() {
                   </div>
                   <div className="mt-2 text-base font-bold">
                     {trackingResult.notes || "No notes yet"}
+                  </div>
+                </div>
+
+                <div className="rounded-2xl border border-slate-200 bg-white p-5 md:col-span-2">
+                  <div className="text-xs font-bold uppercase tracking-[0.2em] text-slate-500">
+                    Complaint Progress
+                  </div>
+
+                  <div className="mt-4 grid gap-4 md:grid-cols-4">
+                    {[
+                      "Complaint Submitted",
+                      "Under Review",
+                      "In Progress",
+                      "Resolved",
+                    ].map((step, index) => {
+                      const currentStatus = (
+                        trackingResult.status || ""
+                      ).toLowerCase();
+
+                      let activeIndex = 0;
+                      if (currentStatus.includes("review")) activeIndex = 1;
+                      if (currentStatus.includes("progress")) activeIndex = 2;
+                      if (currentStatus.includes("resolved")) activeIndex = 3;
+
+                      const isActive = index <= activeIndex;
+
+                      return (
+                        <div
+                          key={step}
+                          className={`rounded-2xl px-4 py-4 text-center text-sm font-bold shadow-sm ${
+                            isActive
+                              ? "bg-green-600 text-white"
+                              : "bg-slate-100 text-slate-500"
+                          }`}
+                        >
+                          {step}
+                        </div>
+                      );
+                    })}
                   </div>
                 </div>
               </div>
@@ -706,7 +757,9 @@ export default function RishikeshOBCCongressWebsite() {
                 {item.date}
               </div>
               <h3 className="mt-3 text-xl font-black">{item.title}</h3>
-              <p className="mt-3 text-sm leading-7 text-slate-600">{item.desc}</p>
+              <p className="mt-3 text-sm leading-7 text-slate-600">
+                {item.desc}
+              </p>
             </div>
           ))}
         </div>
