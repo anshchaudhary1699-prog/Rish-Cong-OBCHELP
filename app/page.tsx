@@ -30,64 +30,55 @@ export default function RishikeshOBCCongressWebsite() {
   const [volunteerId, setVolunteerId] = useState("");
 
   const stats = [
-    { label: "Public Issues Received", value: "2,500+" },
-    { label: "Community Visits", value: "180+" },
-    { label: "Volunteer Network", value: "500+" },
-    { label: "Citizen Support Cases", value: "1,200+" },
+    { label: "जनसमस्याएँ दर्ज", value: "2500+" },
+    { label: "क्षेत्रीय दौरे", value: "180+" },
+    { label: "सक्रिय स्वयंसेवक", value: "500+" },
+    { label: "सहायता प्रकरण", value: "1200+" },
   ];
 
   const focusAreas = [
-    "Youth Employment & Opportunities – युवाओं को रोजगार के अवसर, मार्गदर्शन और कौशल विकास से जोड़ने के लिए निरंतर प्रयास।",
-    "Public Grievance Resolution – आम जनता की समस्याओं को सुनकर प्रशासन तक मजबूती से उठाना और उनका समाधान करवाने के लिए प्रयासरत रहना।",
-    "Ward-Level Problem Solving – अपने वार्ड में सड़क, सफाई, पानी, बिजली और अन्य स्थानीय समस्याओं के समाधान के लिए सक्रिय पहल।",
-    "Local Development in Rishikesh – ऋषिकेश क्षेत्र में विकास कार्यों और बुनियादी सुविधाओं को मजबूत करने के लिए लगातार प्रयास।",
-    "Social Service Programs – सामाजिक सेवा, जनकल्याण और जरूरतमंद लोगों की सहायता के लिए विभिन्न कार्यक्रमों का संचालन।",
-  ];
-
-  const workHighlights = [
-    {
-      title: "जनसुनवाई एवं शिकायत निवारण",
-      text: "स्थानीय नागरिकों की समस्याओं को सुनना, संबंधित विभागों तक पहुँचाना और समाधान की निगरानी करना।",
-    },
-    {
-      title: "युवा एवं सामाजिक अभियान",
-      text: "रक्तदान शिविर, सफाई अभियान, पौधारोपण, शिक्षा सहायता और युवाओं के लिए जागरूकता कार्यक्रम।",
-    },
-    {
-      title: "क्षेत्रीय विकास मुद्दे",
-      text: "सड़क, जलापूर्ति, स्वच्छता, विद्युत, वार्ड समस्याएँ और स्थानीय प्रशासन से समन्वय।",
-    },
-    {
-      title: "OBC समाज प्रतिनिधित्व",
-      text: "OBC समाज की आवाज़ को संगठन और जनमंच तक मज़बूती से पहुँचाना।",
-    },
+    "Youth Employment & Opportunities – युवाओं को रोजगार, मार्गदर्शन और कौशल विकास से जोड़ने का निरंतर प्रयास।",
+    "Public Grievance Resolution – आम जनता की समस्याओं को सुनकर प्रशासन तक मजबूती से उठाना।",
+    "Ward-Level Problem Solving – सड़क, सफाई, पानी, बिजली और स्थानीय समस्याओं के समाधान के लिए सक्रिय पहल।",
+    "Local Development in Rishikesh – ऋषिकेश क्षेत्र में विकास कार्यों और बुनियादी सुविधाओं को मजबूत करना।",
+    "Social Service Programs – सामाजिक सेवा, जनकल्याण और जरूरतमंदों की सहायता के लिए निरंतर प्रयास।",
   ];
 
   const updates = [
     {
       date: "08 March 2026",
       title: "मालवीय नगर क्षेत्र में होली मिलन कार्यक्रम",
-      desc: "मालवीय नगर क्षेत्र के निवासियों और साथियों के साथ होली के पावन पर्व को हर्षोल्लास के साथ मनाया तथा क्षेत्र के लोगों से मुलाकात कर उनकी समस्याओं और सुझावों पर चर्चा की।",
+      desc: "क्षेत्रवासियों और साथियों के साथ होली पर्व मनाया तथा नागरिकों की समस्याओं और सुझावों पर चर्चा की।",
     },
     {
       date: "26 February 2026",
       title: "कानून व्यवस्था को लेकर ज्ञापन प्रेषित",
-      desc: "राज्य में बिगड़ती कानून व्यवस्था के विरोध में कांग्रेस कार्यकर्ताओं के साथ उपजिलाधिकारी के माध्यम से माननीय राज्यपाल महोदय को ज्ञापन प्रेषित किया।",
+      desc: "कांग्रेस कार्यकर्ताओं के साथ कानून व्यवस्था के मुद्दे पर उपजिलाधिकारी के माध्यम से ज्ञापन प्रेषित किया।",
     },
     {
       date: "20 February 2026",
       title: "वार्ड जनसमस्या बैठक",
-      desc: "वार्ड के निवासियों से मुलाकात कर सड़क, सफाई, पानी और नाली जैसी स्थानीय समस्याओं पर चर्चा की तथा उनके समाधान के लिए संबंधित अधिकारियों से बात की।",
+      desc: "वार्ड में सड़क, सफाई, पानी और नाली की समस्याओं पर नागरिकों से चर्चा और समाधान हेतु पहल।",
     },
     {
       date: "10 February 2026",
       title: "ओबीसी विभाग बैठक",
-      desc: "ओबीसी समाज के साथ बैठक कर उनके मुद्दों और अधिकारों पर चर्चा की तथा संगठन को मजबूत करने के लिए कार्यकर्ताओं के साथ विचार-विमर्श किया।",
+      desc: "ओबीसी समाज के मुद्दों, अधिकारों और संगठन सशक्तिकरण पर कार्यकर्ताओं के साथ बैठक।",
+    },
+  ];
+
+  const testimonials = [
+    {
+      name: "स्थानीय निवासी",
+      text: "समस्याएँ सुनने और अधिकारियों तक पहुँचाने में सक्रिय भूमिका दिखाई गई है।",
     },
     {
-      date: "02 February 2026",
-      title: "सामाजिक सेवा कार्यक्रम",
-      desc: "क्षेत्र में सामाजिक सेवा गतिविधियों में भाग लिया और जरूरतमंद लोगों की सहायता कर जनकल्याण के कार्यों को आगे बढ़ाया।",
+      name: "युवा कार्यकर्ता",
+      text: "युवाओं को जोड़ने और सामाजिक भागीदारी बढ़ाने के लिए अच्छा नेतृत्व मिला है।",
+    },
+    {
+      name: "क्षेत्रीय नागरिक",
+      text: "जनसंपर्क और जनसुनवाई की वजह से लोगों का विश्वास मजबूत हुआ है।",
     },
   ];
 
@@ -95,9 +86,6 @@ export default function RishikeshOBCCongressWebsite() {
     { title: "होली मिलन कार्यक्रम", img: "/holi-milan-1.jpg" },
     { title: "होली मिलन कार्यक्रम", img: "/holi-milan-2.jpg" },
     { title: "होली मिलन कार्यक्रम", img: "/holi-milan-3.jpg" },
-    { title: "होली मिलन कार्यक्रम", img: "/holi-milan-4.jpg" },
-    { title: "होली मिलन कार्यक्रम", img: "/holi-milan-5.jpg" },
-    { title: "होली मिलन कार्यक्रम", img: "/holi-milan-6.jpg" },
     { title: "ज्ञापन प्रेषण", img: "/memor-1.jpg" },
     { title: "ज्ञापन प्रेषण", img: "/memor-2.jpg" },
     { title: "वार्ड जनसमस्या बैठक", img: "/ward-meeting.jpg" },
@@ -215,264 +203,221 @@ export default function RishikeshOBCCongressWebsite() {
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-orange-50 via-white to-green-50 text-slate-900">
-      <section className="relative overflow-hidden border-b border-slate-200">
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_left,rgba(255,153,51,0.18),transparent_28%),radial-gradient(circle_at_bottom_right,rgba(19,136,8,0.15),transparent_30%)]" />
-        <div className="relative mx-auto max-w-7xl px-6 py-6 lg:px-10">
-          <div className="flex flex-col gap-4 md:flex-row md:items-center md:justify-between">
-            <div>
-              <div className="inline-flex items-center rounded-full border border-orange-200 bg-white/80 px-4 py-2 text-sm font-medium shadow-sm backdrop-blur">
-                Official Public Connect Platform
-              </div>
-              <h1 className="mt-4 text-3xl font-bold tracking-tight md:text-5xl">
-                Mahanagar Adhyaksh, OBC Vibhag Congress, Rishikesh
-              </h1>
-              <p className="mt-4 max-w-3xl text-base leading-7 text-slate-600 md:text-lg">
-                जनता से सीधा संवाद, जनसमस्याओं का समाधान, संगठन की मज़बूती और
-                ऋषिकेश महानगर में जनसेवा को डिजिटल रूप से जोड़ने वाला एक आधुनिक
-                प्लेटफ़ॉर्म।
-              </p>
+    <div className="min-h-screen bg-white text-slate-900">
+      <section className="relative overflow-hidden bg-slate-950 text-white">
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_left,rgba(249,115,22,0.28),transparent_25%),radial-gradient(circle_at_bottom_right,rgba(34,197,94,0.22),transparent_28%)]" />
+        <div className="absolute inset-0 opacity-20 bg-[linear-gradient(to_right,transparent,rgba(255,255,255,0.06),transparent)]" />
+        <div className="relative mx-auto max-w-7xl px-6 py-8 lg:px-10 lg:py-14">
+          <div className="mb-6 flex flex-wrap items-center justify-between gap-4">
+            <div className="inline-flex items-center rounded-full border border-orange-400/30 bg-white/10 px-4 py-2 text-sm font-semibold backdrop-blur">
+              Official Public Connect Platform
             </div>
             <div className="flex flex-wrap gap-3">
-              <button
-                onClick={() =>
-                  document
-                    .getElementById("complaint-form")
-                    ?.scrollIntoView({ behavior: "smooth" })
-                }
-                className="rounded-2xl bg-slate-900 px-5 py-3 text-sm font-semibold text-white shadow-lg transition hover:-translate-y-0.5"
+              <a
+                href="https://wa.me/919719339666"
+                target="_blank"
+                rel="noreferrer"
+                className="rounded-full bg-green-600 px-4 py-2 text-sm font-semibold text-white shadow-lg"
               >
-                Submit Issue (शिकायत दर्ज करें)
-              </button>
-              <button
-                onClick={() =>
-                  document
-                    .getElementById("volunteer-form")
-                    ?.scrollIntoView({ behavior: "smooth" })
-                }
-                className="rounded-2xl border border-slate-300 bg-white px-5 py-3 text-sm font-semibold shadow-sm transition hover:-translate-y-0.5"
+                WhatsApp Connect
+              </a>
+              <a
+                href="https://chat.whatsapp.com/ET8PlxTaOxcHXSTsBX86Kq?mode=gi_t"
+                target="_blank"
+                rel="noreferrer"
+                className="rounded-full border border-white/20 bg-white/10 px-4 py-2 text-sm font-semibold text-white"
               >
-                Join Volunteer Team
-              </button>
+                Join Ward Group
+              </a>
             </div>
           </div>
 
-          <div className="mt-10 grid gap-6 lg:grid-cols-[1.1fr_0.9fr]">
-            <div className="rounded-[28px] bg-white/90 p-7 shadow-xl ring-1 ring-slate-200 backdrop-blur">
-              <div className="flex flex-col gap-6 md:flex-row md:items-center">
-                <div className="flex h-36 w-36 items-center justify-center overflow-hidden rounded-full shadow-inner">
+          <div className="grid gap-10 lg:grid-cols-[1.1fr_0.9fr] lg:items-center">
+            <div>
+              <p className="text-sm font-bold uppercase tracking-[0.3em] text-orange-300">
+                Har Ghar Tak Nyay, Har Dil Tak Vishwas.
+              </p>
+              <h1 className="mt-4 text-4xl font-black leading-tight md:text-6xl">
+                Sumit Chauhan
+                <span className="block text-orange-400">(Chaudhary)</span>
+              </h1>
+              <p className="mt-5 max-w-2xl text-base leading-8 text-slate-300 md:text-lg">
+                Mahanagar Adhyaksh, OBC Vibhag Congress, Rishikesh. जनसंपर्क,
+                जनसमस्या समाधान, युवा सशक्तिकरण और क्षेत्रीय विकास के लिए समर्पित
+                एक आधुनिक सार्वजनिक मंच।
+              </p>
+
+              <div className="mt-8 flex flex-wrap gap-4">
+                <button
+                  onClick={() =>
+                    document
+                      .getElementById("complaint-form")
+                      ?.scrollIntoView({ behavior: "smooth" })
+                  }
+                  className="rounded-2xl bg-orange-500 px-6 py-4 text-sm font-bold text-white shadow-xl transition hover:-translate-y-1"
+                >
+                  Submit Complaint (शिकायत दर्ज करें)
+                </button>
+                <button
+                  onClick={() =>
+                    document
+                      .getElementById("volunteer-form")
+                      ?.scrollIntoView({ behavior: "smooth" })
+                  }
+                  className="rounded-2xl border border-white/20 bg-white/10 px-6 py-4 text-sm font-bold text-white transition hover:-translate-y-1"
+                >
+                  Become Volunteer (स्वयंसेवक बनें)
+                </button>
+              </div>
+
+              <div className="mt-10 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
+                {stats.map((item) => (
+                  <div
+                    key={item.label}
+                    className="rounded-3xl border border-white/10 bg-white/10 p-5 backdrop-blur"
+                  >
+                    <div className="text-3xl font-black text-white">{item.value}</div>
+                    <div className="mt-2 text-sm text-slate-300">{item.label}</div>
+                  </div>
+                ))}
+              </div>
+            </div>
+
+            <div className="relative">
+              <div className="absolute -inset-3 rounded-[36px] bg-gradient-to-br from-orange-500/30 via-transparent to-green-500/30 blur-2xl" />
+              <div className="relative rounded-[36px] border border-white/10 bg-white/10 p-6 shadow-2xl backdrop-blur">
+                <div className="overflow-hidden rounded-[28px] bg-white">
                   <img
                     src="/sumit-chaudhary.jpg"
                     alt="Sumit Chauhan"
-                    className="h-full w-full object-cover"
+                    className="h-[420px] w-full object-cover"
                   />
                 </div>
-                <div className="flex-1">
-                  <p className="text-sm font-semibold uppercase tracking-[0.2em] text-orange-600">
-                    Har Ghar Tak Nyay, Har Dil Tak Vishwas.
-                  </p>
-                  <h2 className="mt-2 text-2xl font-bold md:text-3xl">
-                    Sumit Chauhan (Chaudhary)
-                  </h2>
-                  <p className="mt-2 text-slate-600">
-                    ऋषिकेश महानगर में OBC समाज, युवाओं और आम नागरिकों की आवाज़ को
-                    संगठन और प्रशासन तक प्रभावी ढंग से पहुँचाने हेतु समर्पित।
-                  </p>
-                  <div className="mt-5 flex flex-wrap gap-3">
-                    <span className="rounded-full bg-orange-50 px-4 py-2 text-sm font-medium text-orange-700">
-                      Rishikesh
-                    </span>
-                    <span className="rounded-full bg-green-50 px-4 py-2 text-sm font-medium text-green-700">
-                      OBC Vibhag
-                    </span>
-                    <span className="rounded-full bg-slate-100 px-4 py-2 text-sm font-medium text-slate-700">
-                      Congress Organization
-                    </span>
+                <div className="mt-5 grid gap-3 sm:grid-cols-3">
+                  <div className="rounded-2xl bg-orange-500/15 p-4 text-center">
+                    <div className="text-sm font-bold text-orange-300">Rishikesh</div>
+                  </div>
+                  <div className="rounded-2xl bg-green-500/15 p-4 text-center">
+                    <div className="text-sm font-bold text-green-300">OBC Vibhag</div>
+                  </div>
+                  <div className="rounded-2xl bg-white/10 p-4 text-center">
+                    <div className="text-sm font-bold text-white">Congress</div>
                   </div>
                 </div>
               </div>
             </div>
-
-            <div className="grid gap-4 sm:grid-cols-2">
-              {stats.map((item) => (
-                <div
-                  key={item.label}
-                  className="rounded-[24px] bg-white p-6 shadow-lg ring-1 ring-slate-200"
-                >
-                  <div className="text-3xl font-bold">{item.value}</div>
-                  <div className="mt-2 text-sm text-slate-600">{item.label}</div>
-                </div>
-              ))}
-            </div>
           </div>
         </div>
       </section>
 
-      <section className="mx-auto max-w-7xl px-6 py-14 lg:px-10">
-        <div className="grid gap-6 md:grid-cols-3">
-          {[
-            {
-              title: "जनसमस्या दर्ज करें",
-              desc: "पानी, सड़क, बिजली, सफाई, पेंशन, सरकारी योजना या किसी भी स्थानीय समस्या को सीधे दर्ज करें।",
-              cta: "Issue Submit",
-            },
-            {
-              title: "स्वयंसेवक बनें",
-              desc: "युवा, सामाजिक कार्यकर्ता और स्थानीय नागरिक संगठन से जुड़कर जनसेवा अभियान का हिस्सा बन सकते हैं।",
-              cta: "Join Team",
-            },
-            {
-              title: "मुलाकात / संपर्क",
-              desc: "जनसुनवाई, कार्यालय समय, फोन, ईमेल और व्हाट्सऐप के माध्यम से सीधे जुड़ें।",
-              cta: "Contact Now",
-            },
-          ].map((card) => (
+      <section className="mx-auto max-w-7xl px-6 py-16 lg:px-10">
+        <div className="mb-8 flex items-end justify-between gap-4">
+          <div>
+            <p className="text-sm font-bold uppercase tracking-[0.25em] text-orange-600">
+              Leadership Priorities
+            </p>
+            <h2 className="mt-2 text-3xl font-black md:text-4xl">
+              Mission, Vision & Public Work
+            </h2>
+          </div>
+        </div>
+
+        <div className="grid gap-5 lg:grid-cols-2">
+          {focusAreas.map((area) => (
             <div
-              key={card.title}
-              className="rounded-[28px] bg-white p-7 shadow-lg ring-1 ring-slate-200 transition hover:-translate-y-1"
+              key={area}
+              className="rounded-[28px] border border-slate-200 bg-white p-6 shadow-sm transition hover:-translate-y-1 hover:shadow-xl"
             >
-              <h3 className="text-xl font-bold">{card.title}</h3>
-              <p className="mt-3 text-sm leading-6 text-slate-600">
-                {card.desc}
-              </p>
-              <button className="mt-6 rounded-2xl border border-slate-300 px-4 py-2 text-sm font-semibold">
-                {card.cta}
-              </button>
+              <p className="text-sm leading-7 text-slate-700">{area}</p>
             </div>
           ))}
         </div>
       </section>
 
-      <section className="mx-auto grid max-w-7xl gap-8 px-6 py-4 lg:grid-cols-[0.9fr_1.1fr] lg:px-10">
-        <div className="rounded-[30px] bg-slate-900 p-8 text-white shadow-xl">
-          <p className="text-sm uppercase tracking-[0.25em] text-orange-300">
-            About
-          </p>
-          <h3 className="mt-3 text-3xl font-bold">
-            A trusted digital face for public leadership
-          </h3>
-          <p className="mt-4 text-sm leading-7 text-slate-300">
-            यह वेबसाइट केवल परिचय के लिए नहीं है। इसका उद्देश्य जनता, कार्यकर्ताओं
-            और समर्थकों को एक ही मंच पर जोड़ना है, जहाँ से जनसमस्या दर्ज हो सके,
-            कार्यों की जानकारी मिले, सामाजिक कार्यक्रम दिखें और सीधे संपर्क का
-            माध्यम उपलब्ध हो।
-          </p>
-          <div className="mt-7 grid gap-3">
-            {focusAreas.map((area) => (
-              <div
-                key={area}
-                className="rounded-2xl bg-white/10 px-4 py-3 text-sm"
-              >
-                {area}
-              </div>
-            ))}
+      <section className="bg-slate-50">
+        <div className="mx-auto max-w-7xl px-6 py-16 lg:px-10">
+          <div className="mb-8">
+            <p className="text-sm font-bold uppercase tracking-[0.25em] text-green-700">
+              Public Action
+            </p>
+            <h2 className="mt-2 text-3xl font-black md:text-4xl">
+              Complaint & Volunteer Action Center
+            </h2>
           </div>
-        </div>
 
-        <div className="grid gap-5 sm:grid-cols-2">
-          {workHighlights.map((item) => (
+          <div className="grid gap-8 lg:grid-cols-2">
             <div
-              key={item.title}
-              className="rounded-[26px] bg-white p-6 shadow-lg ring-1 ring-slate-200"
+              id="complaint-form"
+              className="rounded-[32px] bg-white p-8 shadow-xl ring-1 ring-slate-200"
             >
-              <h4 className="text-lg font-bold">{item.title}</h4>
-              <p className="mt-3 text-sm leading-6 text-slate-600">
-                {item.text}
-              </p>
-            </div>
-          ))}
-        </div>
-      </section>
-
-      <section
-        id="complaint-form"
-        className="mx-auto max-w-7xl px-6 py-14 lg:px-10"
-      >
-        <div className="grid gap-8 lg:grid-cols-[1fr_0.95fr]">
-          <div className="rounded-[30px] bg-white p-8 shadow-xl ring-1 ring-slate-200">
-            <div className="flex items-center justify-between gap-4">
-              <div>
-                <p className="text-sm uppercase tracking-[0.25em] text-green-700">
-                  Citizen Connect
-                </p>
-                <h3 className="mt-2 text-3xl font-bold">
+              <div className="mb-6">
+                <h3 className="text-2xl font-black">
                   Public Issue Submission Form
                 </h3>
+                <p className="mt-2 text-sm text-slate-600">
+                  अपनी समस्या सीधे दर्ज करें और Complaint ID प्राप्त करें।
+                </p>
               </div>
-              <div className="hidden rounded-full bg-orange-50 px-4 py-2 text-sm font-semibold text-orange-700 md:block">
-                Quick Response Workflow
-              </div>
-            </div>
 
-            <form onSubmit={handleSubmit} className="mt-7">
-              <div className="grid gap-4 md:grid-cols-2">
-                <input
-                  name="name"
-                  value={formData.name}
-                  onChange={handleChange}
-                  className="rounded-2xl border border-slate-300 px-4 py-3 outline-none focus:ring-2 focus:ring-orange-300"
-                  placeholder="Full Name (पूरा नाम)"
-                  required
-                />
-
-                <input
-                  name="mobile"
-                  value={formData.mobile}
-                  onChange={handleChange}
-                  className="rounded-2xl border border-slate-300 px-4 py-3 outline-none focus:ring-2 focus:ring-orange-300"
-                  placeholder="Mobile Number (मोबाइल नंबर)"
-                  required
-                />
-
-                <select
-                  name="ward"
-                  value={formData.ward}
-                  onChange={handleChange}
-                  className="rounded-2xl border border-slate-300 px-4 py-3 outline-none focus:ring-2 focus:ring-orange-300"
-                  required
-                >
-                  <option value="">Ward (वार्ड)</option>
-                  {wards.map((ward) => (
-                    <option key={ward} value={ward}>
-                      {ward}
+              <form onSubmit={handleSubmit} className="space-y-4">
+                <div className="grid gap-4 md:grid-cols-2">
+                  <input
+                    name="name"
+                    value={formData.name}
+                    onChange={handleChange}
+                    className="rounded-2xl border border-slate-300 px-4 py-3 outline-none focus:ring-2 focus:ring-orange-300"
+                    placeholder="Full Name (पूरा नाम)"
+                    required
+                  />
+                  <input
+                    name="mobile"
+                    value={formData.mobile}
+                    onChange={handleChange}
+                    className="rounded-2xl border border-slate-300 px-4 py-3 outline-none focus:ring-2 focus:ring-orange-300"
+                    placeholder="Mobile Number (मोबाइल नंबर)"
+                    required
+                  />
+                  <select
+                    name="ward"
+                    value={formData.ward}
+                    onChange={handleChange}
+                    className="rounded-2xl border border-slate-300 px-4 py-3 outline-none focus:ring-2 focus:ring-orange-300"
+                    required
+                  >
+                    <option value="">Ward (वार्ड)</option>
+                    {wards.map((ward) => (
+                      <option key={ward} value={ward}>
+                        {ward}
+                      </option>
+                    ))}
+                  </select>
+                  <select
+                    name="category"
+                    value={formData.category}
+                    onChange={handleChange}
+                    className="rounded-2xl border border-slate-300 px-4 py-3 outline-none focus:ring-2 focus:ring-orange-300"
+                    required
+                  >
+                    <option value="">Issue Category (समस्या का प्रकार)</option>
+                    <option value="Water Supply">Water Supply (पानी की समस्या)</option>
+                    <option value="Road Problem">Road Problem (सड़क की समस्या)</option>
+                    <option value="Drainage Issue">Drainage Issue (नाली की समस्या)</option>
+                    <option value="Electricity Issue">Electricity Issue (बिजली की समस्या)</option>
+                    <option value="Sanitation / Cleanliness">
+                      Sanitation / Cleanliness (सफाई की समस्या)
                     </option>
-                  ))}
-                </select>
-
-                <select
-                  name="category"
-                  value={formData.category}
-                  onChange={handleChange}
-                  className="rounded-2xl border border-slate-300 px-4 py-3 outline-none focus:ring-2 focus:ring-orange-300"
-                  required
-                >
-                  <option value="">Issue Category (समस्या का प्रकार)</option>
-                  <option value="Water Supply">
-                    Water Supply (पानी की समस्या)
-                  </option>
-                  <option value="Road Problem">
-                    Road Problem (सड़क की समस्या)
-                  </option>
-                  <option value="Drainage Issue">
-                    Drainage Issue (नाली की समस्या)
-                  </option>
-                  <option value="Electricity Issue">
-                    Electricity Issue (बिजली की समस्या)
-                  </option>
-                  <option value="Sanitation / Cleanliness">
-                    Sanitation / Cleanliness (सफाई की समस्या)
-                  </option>
-                  <option value="Government Scheme Issue">
-                    Government Scheme Issue (सरकारी योजना की समस्या)
-                  </option>
-                  <option value="Other">Other (अन्य)</option>
-                </select>
+                    <option value="Government Scheme Issue">
+                      Government Scheme Issue (सरकारी योजना की समस्या)
+                    </option>
+                    <option value="Other">Other (अन्य)</option>
+                  </select>
+                </div>
 
                 <textarea
                   name="description"
                   value={formData.description}
                   onChange={handleChange}
-                  className="md:col-span-2 min-h-[140px] rounded-2xl border border-slate-300 px-4 py-3 outline-none focus:ring-2 focus:ring-orange-300"
+                  className="min-h-[140px] w-full rounded-2xl border border-slate-300 px-4 py-3 outline-none focus:ring-2 focus:ring-orange-300"
                   placeholder="Describe the Problem (समस्या का विवरण)"
                   required
                 />
@@ -481,98 +426,175 @@ export default function RishikeshOBCCongressWebsite() {
                   name="photo"
                   value={formData.photo}
                   onChange={handleChange}
-                  className="md:col-span-2 rounded-2xl border border-dashed border-slate-300 px-4 py-3"
+                  className="w-full rounded-2xl border border-dashed border-slate-300 px-4 py-3"
                   placeholder="Photo Link (फोटो लिंक)"
                 />
-              </div>
-
-              <div className="mt-5 flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
-                <p className="text-xs leading-5 text-slate-500">
-                  By submitting this form, your details may be used only for
-                  grievance follow-up and public service assistance.
-                </p>
 
                 <button
                   type="submit"
                   disabled={loading}
-                  className="rounded-2xl bg-gradient-to-r from-orange-500 to-green-600 px-5 py-3 text-sm font-semibold text-white shadow-lg disabled:opacity-60"
+                  className="w-full rounded-2xl bg-gradient-to-r from-orange-500 to-green-600 px-5 py-4 text-sm font-bold text-white shadow-lg disabled:opacity-60"
                 >
                   {loading
                     ? "Submitting..."
                     : "Submit Complaint (शिकायत दर्ज करें)"}
                 </button>
+
+                {message && (
+                  <div className="rounded-2xl bg-slate-100 px-4 py-4 text-sm text-slate-700">
+                    <p>{message}</p>
+                    {complaintId && (
+                      <p className="mt-2 font-bold text-slate-900">
+                        Complaint ID: {complaintId}
+                      </p>
+                    )}
+                  </div>
+                )}
+              </form>
+            </div>
+
+            <div
+              id="volunteer-form"
+              className="rounded-[32px] bg-slate-950 p-8 text-white shadow-xl"
+            >
+              <div className="mb-6">
+                <h3 className="text-2xl font-black">Volunteer Registration</h3>
+                <p className="mt-2 text-sm text-slate-300">
+                  जनसेवा अभियान से जुड़ें और क्षेत्रीय बदलाव का हिस्सा बनें।
+                </p>
               </div>
 
-              {message && (
-                <div className="mt-4 rounded-xl bg-slate-100 px-4 py-3 text-sm text-slate-700">
-                  <p>{message}</p>
-                  {complaintId && (
-                    <p className="mt-2 font-semibold text-slate-900">
-                      Complaint ID: {complaintId}
-                    </p>
-                  )}
+              <form onSubmit={handleVolunteerSubmit} className="space-y-4">
+                <div className="grid gap-4 md:grid-cols-2">
+                  <input
+                    name="name"
+                    value={volunteerData.name}
+                    onChange={handleVolunteerChange}
+                    className="rounded-2xl border border-white/10 bg-white/10 px-4 py-3 text-white placeholder:text-slate-300"
+                    placeholder="Full Name (पूरा नाम)"
+                    required
+                  />
+                  <input
+                    name="mobile"
+                    value={volunteerData.mobile}
+                    onChange={handleVolunteerChange}
+                    className="rounded-2xl border border-white/10 bg-white/10 px-4 py-3 text-white placeholder:text-slate-300"
+                    placeholder="Phone (मोबाइल नंबर)"
+                    required
+                  />
+                  <input
+                    name="age"
+                    value={volunteerData.age}
+                    onChange={handleVolunteerChange}
+                    className="rounded-2xl border border-white/10 bg-white/10 px-4 py-3 text-white placeholder:text-slate-300"
+                    placeholder="Age (आयु)"
+                    required
+                  />
+                  <input
+                    name="area"
+                    value={volunteerData.area}
+                    onChange={handleVolunteerChange}
+                    className="rounded-2xl border border-white/10 bg-white/10 px-4 py-3 text-white placeholder:text-slate-300"
+                    placeholder="Area / Ward (क्षेत्र / वार्ड)"
+                    required
+                  />
                 </div>
-              )}
-            </form>
-          </div>
 
-          <div className="rounded-[30px] bg-gradient-to-br from-slate-900 to-slate-800 p-8 text-white shadow-xl">
-            <p className="text-sm uppercase tracking-[0.25em] text-orange-300">
-              Recent Activities
-            </p>
-            <h3 className="mt-2 text-3xl font-bold">Updates & Ground Work</h3>
-            <div className="mt-6 space-y-4">
-              {updates.map((item) => (
-                <div
-                  key={item.title}
-                  className="rounded-[24px] border border-white/10 bg-white/5 p-5"
+                <input
+                  name="skills"
+                  value={volunteerData.skills}
+                  onChange={handleVolunteerChange}
+                  className="w-full rounded-2xl border border-white/10 bg-white/10 px-4 py-3 text-white placeholder:text-slate-300"
+                  placeholder="Skills (social media, events, field work, youth outreach)"
+                  required
+                />
+
+                <textarea
+                  name="reason"
+                  value={volunteerData.reason}
+                  onChange={handleVolunteerChange}
+                  className="min-h-[120px] w-full rounded-2xl border border-white/10 bg-white/10 px-4 py-3 text-white placeholder:text-slate-300"
+                  placeholder="Why do you want to join? (आप क्यों जुड़ना चाहते हैं?)"
+                  required
+                />
+
+                <button
+                  type="submit"
+                  disabled={volunteerLoading}
+                  className="w-full rounded-2xl bg-orange-500 px-5 py-4 text-sm font-bold text-white shadow-lg disabled:opacity-60"
                 >
-                  <div className="text-xs font-semibold uppercase tracking-[0.2em] text-green-300">
-                    {item.date}
+                  {volunteerLoading
+                    ? "Registering..."
+                    : "Register Now (रजिस्टर करें)"}
+                </button>
+
+                {volunteerMessage && (
+                  <div className="rounded-2xl bg-white/10 px-4 py-4 text-sm text-white">
+                    <p>{volunteerMessage}</p>
+                    {volunteerId && (
+                      <p className="mt-2 font-bold">Volunteer ID: {volunteerId}</p>
+                    )}
                   </div>
-                  <h4 className="mt-2 text-lg font-bold">{item.title}</h4>
-                  <p className="mt-2 text-sm leading-6 text-slate-300">
-                    {item.desc}
-                  </p>
-                </div>
-              ))}
+                )}
+              </form>
             </div>
           </div>
         </div>
       </section>
 
-      <section className="mx-auto max-w-7xl px-6 py-4 lg:px-10">
-        <div className="rounded-[30px] bg-white p-8 shadow-xl ring-1 ring-slate-200">
-          <div className="flex flex-col gap-3 md:flex-row md:items-end md:justify-between">
-            <div>
-              <p className="text-sm uppercase tracking-[0.25em] text-orange-600">
-                Visual Presence
-              </p>
-              <h3 className="mt-2 text-3xl font-bold">
-                Gallery & Campaign Moments
-              </h3>
+      <section className="mx-auto max-w-7xl px-6 py-16 lg:px-10">
+        <div className="mb-8">
+          <p className="text-sm font-bold uppercase tracking-[0.25em] text-orange-600">
+            Public Work Timeline
+          </p>
+          <h2 className="mt-2 text-3xl font-black md:text-4xl">
+            Recent Ground Activities
+          </h2>
+        </div>
+
+        <div className="grid gap-5 md:grid-cols-2">
+          {updates.map((item) => (
+            <div
+              key={item.title}
+              className="rounded-[28px] border border-slate-200 bg-white p-6 shadow-sm transition hover:-translate-y-1 hover:shadow-xl"
+            >
+              <div className="text-xs font-bold uppercase tracking-[0.2em] text-green-700">
+                {item.date}
+              </div>
+              <h3 className="mt-3 text-xl font-black">{item.title}</h3>
+              <p className="mt-3 text-sm leading-7 text-slate-600">{item.desc}</p>
             </div>
-            <button className="rounded-2xl border border-slate-300 px-4 py-2 text-sm font-semibold">
-              View Full Gallery
-            </button>
+          ))}
+        </div>
+      </section>
+
+      <section className="bg-slate-50">
+        <div className="mx-auto max-w-7xl px-6 py-16 lg:px-10">
+          <div className="mb-8">
+            <p className="text-sm font-bold uppercase tracking-[0.25em] text-green-700">
+              Media Preview
+            </p>
+            <h2 className="mt-2 text-3xl font-black md:text-4xl">
+              Gallery & Campaign Moments
+            </h2>
           </div>
 
-          <div className="mt-8 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+          <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
             {gallery.map((item, index) => (
               <div
                 key={`${item.title}-${index}`}
-                className="group rounded-[26px] border border-slate-200 bg-gradient-to-br from-orange-50 via-white to-green-50 p-6 shadow-sm transition hover:-translate-y-1"
+                className="overflow-hidden rounded-[28px] bg-white shadow-lg ring-1 ring-slate-200 transition hover:-translate-y-1"
               >
-                <div className="h-36 overflow-hidden rounded-[22px] border border-slate-200 bg-white">
-                  <img
-                    src={item.img}
-                    alt={item.title}
-                    className="h-full w-full object-cover"
-                  />
-                </div>
-                <div className="mt-4 text-base font-bold">{item.title}</div>
-                <div className="mt-1 text-sm text-slate-600">
-                  Public moments, outreach highlights and event documentation.
+                <img
+                  src={item.img}
+                  alt={item.title}
+                  className="h-56 w-full object-cover"
+                />
+                <div className="p-5">
+                  <h3 className="text-lg font-black">{item.title}</h3>
+                  <p className="mt-2 text-sm text-slate-600">
+                    जनसंपर्क, सामाजिक संवाद और क्षेत्रीय गतिविधियों की झलक।
+                  </p>
                 </div>
               </div>
             ))}
@@ -580,192 +602,142 @@ export default function RishikeshOBCCongressWebsite() {
         </div>
       </section>
 
-      <section
-        id="volunteer-form"
-        className="mx-auto max-w-7xl px-6 py-14 lg:px-10"
-      >
-        <div className="grid gap-8 lg:grid-cols-[0.95fr_1.05fr]">
-          <div className="rounded-[30px] bg-white p-8 shadow-xl ring-1 ring-slate-200">
-            <p className="text-sm uppercase tracking-[0.25em] text-green-700">
-              Join the Movement
-            </p>
-            <h3 className="mt-2 text-3xl font-bold">Volunteer Registration</h3>
+      <section className="mx-auto max-w-7xl px-6 py-16 lg:px-10">
+        <div className="mb-8">
+          <p className="text-sm font-bold uppercase tracking-[0.25em] text-orange-600">
+            Public Voice
+          </p>
+          <h2 className="mt-2 text-3xl font-black md:text-4xl">
+            What People Say
+          </h2>
+        </div>
 
-            <form onSubmit={handleVolunteerSubmit} className="mt-6">
-              <div className="grid gap-4 md:grid-cols-2">
-                <input
-                  name="name"
-                  value={volunteerData.name}
-                  onChange={handleVolunteerChange}
-                  className="rounded-2xl border border-slate-300 px-4 py-3"
-                  placeholder="Full Name (पूरा नाम)"
-                  required
-                />
-                <input
-                  name="mobile"
-                  value={volunteerData.mobile}
-                  onChange={handleVolunteerChange}
-                  className="rounded-2xl border border-slate-300 px-4 py-3"
-                  placeholder="Phone (मोबाइल नंबर)"
-                  required
-                />
-                <input
-                  name="age"
-                  value={volunteerData.age}
-                  onChange={handleVolunteerChange}
-                  className="rounded-2xl border border-slate-300 px-4 py-3"
-                  placeholder="Age (आयु)"
-                  required
-                />
-                <input
-                  name="area"
-                  value={volunteerData.area}
-                  onChange={handleVolunteerChange}
-                  className="rounded-2xl border border-slate-300 px-4 py-3"
-                  placeholder="Area / Ward (क्षेत्र / वार्ड)"
-                  required
-                />
-                <input
-                  name="skills"
-                  value={volunteerData.skills}
-                  onChange={handleVolunteerChange}
-                  className="md:col-span-2 rounded-2xl border border-slate-300 px-4 py-3"
-                  placeholder="Skills (social media, events, field work, youth outreach)"
-                  required
-                />
-                <textarea
-                  name="reason"
-                  value={volunteerData.reason}
-                  onChange={handleVolunteerChange}
-                  className="md:col-span-2 min-h-[120px] rounded-2xl border border-slate-300 px-4 py-3"
-                  placeholder="Why do you want to join? (आप क्यों जुड़ना चाहते हैं?)"
-                  required
-                />
+        <div className="grid gap-5 md:grid-cols-3">
+          {testimonials.map((item) => (
+            <div
+              key={item.name}
+              className="rounded-[28px] border border-slate-200 bg-white p-6 shadow-sm"
+            >
+              <p className="text-sm leading-7 text-slate-600">“{item.text}”</p>
+              <div className="mt-5 text-sm font-black text-slate-900">
+                {item.name}
               </div>
+            </div>
+          ))}
+        </div>
+      </section>
 
-              <button
-                type="submit"
-                disabled={volunteerLoading}
-                className="mt-5 rounded-2xl bg-slate-900 px-5 py-3 text-sm font-semibold text-white shadow-lg disabled:opacity-60"
-              >
-                {volunteerLoading
-                  ? "Registering..."
-                  : "Register Now (रजिस्टर करें)"}
-              </button>
-
-              {volunteerMessage && (
-                <div className="mt-4 rounded-xl bg-slate-100 px-4 py-3 text-sm text-slate-700">
-                  <p>{volunteerMessage}</p>
-                  {volunteerId && (
-                    <p className="mt-2 font-semibold text-slate-900">
-                      Volunteer ID: {volunteerId}
-                    </p>
-                  )}
-                </div>
-              )}
-            </form>
-          </div>
-
-          <div className="rounded-[30px] bg-gradient-to-br from-orange-500 via-white to-green-500 p-[1px] shadow-2xl">
-            <div className="h-full rounded-[30px] bg-white p-8">
-              <p className="text-sm uppercase tracking-[0.25em] text-orange-600">
+      <section className="bg-slate-950 text-white">
+        <div className="mx-auto max-w-7xl px-6 py-16 lg:px-10">
+          <div className="grid gap-8 lg:grid-cols-[0.95fr_1.05fr]">
+            <div>
+              <p className="text-sm font-bold uppercase tracking-[0.25em] text-orange-300">
                 Direct Contact
               </p>
-              <h3 className="mt-2 text-3xl font-bold">
+              <h2 className="mt-2 text-3xl font-black md:text-4xl">
                 Office & Public Communication
-              </h3>
-              <div className="mt-6 grid gap-4">
+              </h2>
+              <div className="mt-8 grid gap-4">
                 {[
                   [
                     "Office Address",
                     "Malviya Nagar, Veerbhadra, Rishikesh, Uttarakhand",
                   ],
                   ["Phone", "+91 9719339666"],
-                  ["WhatsApp", "Click to chat support"],
                   ["Email", "chaudharysumit168@gmail.com"],
-                  ["Public Meeting Hours", "Mon - Sat | 10:00 AM - 2:00 PM"],
+                  ["Meeting Hours", "Mon - Sat | 10:00 AM - 2:00 PM"],
                 ].map(([label, value]) => (
                   <div
                     key={label}
-                    className="rounded-2xl bg-slate-50 px-5 py-4"
+                    className="rounded-2xl border border-white/10 bg-white/5 px-5 py-4"
                   >
-                    <div className="text-xs font-semibold uppercase tracking-[0.2em] text-slate-500">
+                    <div className="text-xs font-bold uppercase tracking-[0.2em] text-slate-400">
                       {label}
                     </div>
-                    <div className="mt-1 text-base font-semibold text-slate-900">
+                    <div className="mt-1 text-base font-semibold text-white">
                       {value}
                     </div>
                   </div>
                 ))}
               </div>
+            </div>
+
+            <div className="rounded-[32px] border border-white/10 bg-white/5 p-8">
+              <h3 className="text-2xl font-black">Quick Connect</h3>
+              <p className="mt-2 text-sm text-slate-300">
+                वेबसाइट, सोशल मीडिया और व्हाट्सऐप के माध्यम से सीधे जुड़ें।
+              </p>
 
               <div className="mt-6 flex flex-wrap gap-3">
                 <a
                   href="https://wa.me/919719339666"
                   target="_blank"
                   rel="noreferrer"
-                  className="rounded-2xl bg-green-600 px-4 py-3 text-sm font-semibold text-white"
+                  className="rounded-2xl bg-green-600 px-5 py-3 text-sm font-bold text-white"
                 >
                   WhatsApp Connect
                 </a>
-
                 <a
                   href="https://chat.whatsapp.com/ET8PlxTaOxcHXSTsBX86Kq?mode=gi_t"
                   target="_blank"
                   rel="noreferrer"
-                  className="rounded-2xl bg-slate-900 px-4 py-3 text-sm font-semibold text-white"
+                  className="rounded-2xl bg-orange-500 px-5 py-3 text-sm font-bold text-white"
                 >
-                  Join Ward WhatsApp Group
+                  Join Ward Group
                 </a>
-
                 <a
                   href="https://www.facebook.com/share/1Gctan27Ep/?mibextid=wwXIfr"
                   target="_blank"
                   rel="noreferrer"
-                  className="rounded-2xl border border-slate-300 px-4 py-3 text-sm font-semibold"
+                  className="rounded-2xl border border-white/15 bg-white/10 px-5 py-3 text-sm font-bold text-white"
                 >
                   Facebook
                 </a>
-
                 <a
                   href="https://www.instagram.com/__sumit_chaudhary161?igsh=MTF0d291Yzdha3ZoMw%3D%3D&utm_source=qr"
                   target="_blank"
                   rel="noreferrer"
-                  className="rounded-2xl border border-slate-300 px-4 py-3 text-sm font-semibold"
+                  className="rounded-2xl border border-white/15 bg-white/10 px-5 py-3 text-sm font-bold text-white"
                 >
                   Instagram
                 </a>
-
-                <span className="rounded-2xl border border-slate-300 px-4 py-3 text-sm font-semibold text-slate-400">
-                  YouTube
-                </span>
               </div>
             </div>
           </div>
         </div>
       </section>
 
-      <a
-        href="https://wa.me/919719339666"
-        target="_blank"
-        rel="noreferrer"
-        className="fixed bottom-6 right-6 z-50 rounded-full bg-green-600 px-5 py-4 text-sm font-bold text-white shadow-2xl"
-      >
-        WhatsApp
-      </a>
+      <div className="fixed bottom-5 right-5 z-50 flex flex-col gap-3">
+        <a
+          href="https://wa.me/919719339666"
+          target="_blank"
+          rel="noreferrer"
+          className="rounded-full bg-green-600 px-5 py-4 text-sm font-bold text-white shadow-2xl"
+        >
+          WhatsApp
+        </a>
+        <button
+          onClick={() =>
+            document
+              .getElementById("complaint-form")
+              ?.scrollIntoView({ behavior: "smooth" })
+          }
+          className="rounded-full bg-orange-500 px-5 py-4 text-sm font-bold text-white shadow-2xl"
+        >
+          Complaint
+        </button>
+      </div>
 
       <footer className="border-t border-slate-200 bg-white">
         <div className="mx-auto flex max-w-7xl flex-col gap-4 px-6 py-8 text-sm text-slate-600 lg:flex-row lg:items-center lg:justify-between lg:px-10">
           <div>
-            <div className="font-semibold text-slate-900">
-              Official Public Website
-            </div>
+            <div className="font-black text-slate-900">Official Public Website</div>
             <div>Mahanagar Adhyaksh, OBC Vibhag Congress, Rishikesh</div>
           </div>
           <div className="max-w-2xl">
-            This website is intended for public communication, grievance
-            collection, volunteer coordination and sharing updates related to
-            local public service activities.
+            This website is intended for public communication, grievance collection,
+            volunteer coordination and sharing updates related to local public service
+            activities.
           </div>
         </div>
       </footer>
