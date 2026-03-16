@@ -34,12 +34,12 @@ export default function RishikeshOBCCongressWebsite() {
   const [trackingMessage, setTrackingMessage] = useState("");
   const [trackingResult, setTrackingResult] = useState<any>(null);
 
-  const stats = [
-    { label: "जनसमस्याएँ दर्ज", value: "2500+" },
-    { label: "क्षेत्रीय दौरे", value: "180+" },
-    { label: "सक्रिय स्वयंसेवक", value: "500+" },
-    { label: "सहायता प्रकरण", value: "1200+" },
-  ];
+ const stats = [
+  { label: "Total Complaints", value: "2500+", sub: "कुल शिकायतें" },
+  { label: "Pending Cases", value: "420+", sub: "लंबित मामले" },
+  { label: "Resolved Cases", value: "2080+", sub: "निस्तारित मामले" },
+  { label: "Active Volunteers", value: "500+", sub: "सक्रिय स्वयंसेवक" },
+];
 
   const focusAreas = [
     "Youth Employment & Opportunities – युवाओं को रोजगार, मार्गदर्शन और कौशल विकास से जोड़ने का निरंतर प्रयास।",
@@ -312,16 +312,17 @@ export default function RishikeshOBCCongressWebsite() {
               </div>
 
               <div className="mt-10 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
-                {stats.map((item) => (
-                  <div
-                    key={item.label}
-                    className="rounded-3xl border border-white/10 bg-white/10 p-5 backdrop-blur"
-                  >
-                    <div className="text-3xl font-black text-white">{item.value}</div>
-                    <div className="mt-2 text-sm text-slate-300">{item.label}</div>
-                  </div>
-                ))}
-              </div>
+  {stats.map((item) => (
+    <div
+      key={item.label}
+      className="rounded-3xl border border-white/10 bg-white/10 p-5 backdrop-blur hover:scale-105 transition"
+    >
+      <div className="text-3xl font-black text-white">{item.value}</div>
+      <div className="mt-2 text-sm font-semibold text-white">{item.label}</div>
+      <div className="mt-1 text-xs text-slate-300">{item.sub}</div>
+    </div>
+  ))}
+</div>
             </div>
 
             <div className="relative">
