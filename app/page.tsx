@@ -387,7 +387,10 @@ export default function RishikeshOBCCongressWebsite() {
           </div>
 
           <div className="rounded-[32px] bg-white p-8 shadow-xl ring-1 ring-slate-200">
-            <form onSubmit={handleTrackComplaint} className="grid gap-4 md:grid-cols-[1fr_auto]">
+            <form
+              onSubmit={handleTrackComplaint}
+              className="grid gap-4 md:grid-cols-[1fr_auto]"
+            >
               <input
                 value={trackId}
                 onChange={(e) => setTrackId(e.target.value)}
@@ -416,31 +419,41 @@ export default function RishikeshOBCCongressWebsite() {
                   <div className="text-xs font-bold uppercase tracking-[0.2em] text-slate-500">
                     Complaint ID
                   </div>
-                  <div className="mt-2 text-base font-bold">{trackingResult.complaintId}</div>
+                  <div className="mt-2 text-base font-bold">
+                    {trackingResult.complaintId}
+                  </div>
                 </div>
                 <div className="rounded-2xl border border-slate-200 bg-slate-50 p-4">
                   <div className="text-xs font-bold uppercase tracking-[0.2em] text-slate-500">
                     Status
                   </div>
-                  <div className="mt-2 text-base font-bold">{trackingResult.status}</div>
+                  <div className="mt-2 text-base font-bold">
+                    {trackingResult.status}
+                  </div>
                 </div>
                 <div className="rounded-2xl border border-slate-200 bg-slate-50 p-4">
                   <div className="text-xs font-bold uppercase tracking-[0.2em] text-slate-500">
                     Ward
                   </div>
-                  <div className="mt-2 text-base font-bold">{trackingResult.ward}</div>
+                  <div className="mt-2 text-base font-bold">
+                    {trackingResult.ward}
+                  </div>
                 </div>
                 <div className="rounded-2xl border border-slate-200 bg-slate-50 p-4">
                   <div className="text-xs font-bold uppercase tracking-[0.2em] text-slate-500">
                     Category
                   </div>
-                  <div className="mt-2 text-base font-bold">{trackingResult.category}</div>
+                  <div className="mt-2 text-base font-bold">
+                    {trackingResult.category}
+                  </div>
                 </div>
                 <div className="rounded-2xl border border-slate-200 bg-slate-50 p-4 md:col-span-2">
                   <div className="text-xs font-bold uppercase tracking-[0.2em] text-slate-500">
                     Description
                   </div>
-                  <div className="mt-2 text-base font-bold">{trackingResult.description}</div>
+                  <div className="mt-2 text-base font-bold">
+                    {trackingResult.description}
+                  </div>
                 </div>
                 <div className="rounded-2xl border border-slate-200 bg-slate-50 p-4 md:col-span-2">
                   <div className="text-xs font-bold uppercase tracking-[0.2em] text-slate-500">
@@ -521,10 +534,18 @@ export default function RishikeshOBCCongressWebsite() {
                     required
                   >
                     <option value="">Issue Category (समस्या का प्रकार)</option>
-                    <option value="Water Supply">Water Supply (पानी की समस्या)</option>
-                    <option value="Road Problem">Road Problem (सड़क की समस्या)</option>
-                    <option value="Drainage Issue">Drainage Issue (नाली की समस्या)</option>
-                    <option value="Electricity Issue">Electricity Issue (बिजली की समस्या)</option>
+                    <option value="Water Supply">
+                      Water Supply (पानी की समस्या)
+                    </option>
+                    <option value="Road Problem">
+                      Road Problem (सड़क की समस्या)
+                    </option>
+                    <option value="Drainage Issue">
+                      Drainage Issue (नाली की समस्या)
+                    </option>
+                    <option value="Electricity Issue">
+                      Electricity Issue (बिजली की समस्या)
+                    </option>
                     <option value="Sanitation / Cleanliness">
                       Sanitation / Cleanliness (सफाई की समस्या)
                     </option>
@@ -692,13 +713,22 @@ export default function RishikeshOBCCongressWebsite() {
 
       <section className="bg-slate-50">
         <div className="mx-auto max-w-7xl px-6 py-16 lg:px-10">
-          <div className="mb-8">
-            <p className="text-sm font-bold uppercase tracking-[0.25em] text-green-700">
-              Media Preview
-            </p>
-            <h2 className="mt-2 text-3xl font-black md:text-4xl">
-              Gallery & Campaign Moments
-            </h2>
+          <div className="mb-8 flex items-end justify-between gap-4">
+            <div>
+              <p className="text-sm font-bold uppercase tracking-[0.25em] text-green-700">
+                Media Preview
+              </p>
+              <h2 className="mt-2 text-3xl font-black md:text-4xl">
+                Gallery & Campaign Moments
+              </h2>
+            </div>
+
+            <a
+              href="/gallery"
+              className="rounded-2xl border border-slate-300 px-4 py-2 text-sm font-semibold hover:bg-slate-100 transition"
+            >
+              View Full Gallery
+            </a>
           </div>
 
           <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
@@ -872,13 +902,15 @@ export default function RishikeshOBCCongressWebsite() {
       <footer className="border-t border-slate-200 bg-white">
         <div className="mx-auto flex max-w-7xl flex-col gap-4 px-6 py-8 text-sm text-slate-600 lg:flex-row lg:items-center lg:justify-between lg:px-10">
           <div>
-            <div className="font-black text-slate-900">Official Public Website</div>
+            <div className="font-black text-slate-900">
+              Official Public Website
+            </div>
             <div>Mahanagar Adhyaksh, OBC Vibhag Congress, Rishikesh</div>
           </div>
           <div className="max-w-2xl">
-            This website is intended for public communication, grievance collection,
-            volunteer coordination and sharing updates related to local public service
-            activities.
+            This website is intended for public communication, grievance
+            collection, volunteer coordination and sharing updates related to
+            local public service activities.
           </div>
         </div>
       </footer>
