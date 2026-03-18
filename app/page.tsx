@@ -33,36 +33,53 @@ export default function RishikeshOBCCongressWebsite() {
   const [trackingLoading, setTrackingLoading] = useState(false);
   const [trackingMessage, setTrackingMessage] = useState("");
   const [trackingResult, setTrackingResult] = useState<any>(null);
- 
+
   const [liveStats, setLiveStats] = useState({
-  totalComplaints: 0,
-  pendingCases: 0,
-  resolvedCases: 0,
-  activeVolunteers: 0,
-});
+    totalComplaints: 0,
+    pendingCases: 0,
+    resolvedCases: 0,
+    activeVolunteers: 0,
+  });
+
+  useEffect(() => {
+    const fetchAnalytics = async () => {
+      try {
+        const response = await fetch("/api/analytics");
+        const result = await response.json();
+
+        if (result.success) {
+          setLiveStats(result.stats);
+        }
+      } catch (error) {
+        console.error("Analytics fetch failed", error);
+      }
+    };
+
+    fetchAnalytics();
+  }, []);
 
   const stats = [
-    { label: "Total Complaints", value: "2500+", sub: "कुल शिकायतें" },
-    { label: "Pending Cases", value: "420+", sub: "लंबित मामले" },
-    { label: "Resolved Cases", value: "2080+", sub: "निस्तारित मामले" },
-    { label: "Active Volunteers", value: "500+", sub: "सक्रिय स्वयंसेवक" },
+    {
+      label: "Total Complaints",
+      value: String(liveStats.totalComplaints),
+      sub: "कुल शिकायतें",
+    },
+    {
+      label: "Pending Cases",
+      value: String(liveStats.pendingCases),
+      sub: "लंबित मामले",
+    },
+    {
+      label: "Resolved Cases",
+      value: String(liveStats.resolvedCases),
+      sub: "निस्तारित मामले",
+    },
+    {
+      label: "Active Volunteers",
+      value: String(liveStats.activeVolunteers),
+      sub: "सक्रिय स्वयंसेवक",
+    },
   ];
- useEffect(() => {
-  const fetchAnalytics = async () => {
-    try {
-      const response = await fetch("/api/analytics");
-      const result = await response.json();
-
-      if (result.success) {
-        setLiveStats(result.stats);
-      }
-    } catch (error) {
-      console.error("Analytics fetch failed", error);
-    }
-  };
-
-  fetchAnalytics();
-}, []);
 
   const focusAreas = [
     "Youth Employment & Opportunities – युवाओं को रोजगार, मार्गदर्शन और कौशल विकास से जोड़ने का निरंतर प्रयास।",
@@ -144,6 +161,7 @@ export default function RishikeshOBCCongressWebsite() {
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
+
     setLoading(true);
     setMessage("");
     setComplaintId("");
@@ -160,10 +178,32 @@ export default function RishikeshOBCCongressWebsite() {
       const result = await response.json();
 
       if (result.success) {
-        setComplaintId(result.complaintId || "");
+        const newComplaintId = result.complaintId || "";
+
+        setComplaintId(newComplaintId);
         setMessage(
           "Complaint submitted successfully. (शिकायत सफलतापूर्वक दर्ज हो गई है।)"
         );
+
+        const whatsappMessage = `New Complaint Received
+
+Complaint ID: ${newComplaintId}
+Name: ${formData.name}
+Mobile: ${formData.mobile}
+Ward: ${formData.ward}
+Category: ${formData.category}
+
+Problem:
+${formData.description}
+
+Please review this complaint.`;
+
+        const whatsappUrl =
+          "https://wa.me/919719339666?text=" +
+          encodeURIComponent(whatsappMessage);
+
+        window.open(whatsappUrl, "_blank");
+
         setFormData({
           name: "",
           mobile: "",
@@ -177,7 +217,8 @@ export default function RishikeshOBCCongressWebsite() {
           "Something went wrong. Please try again. (कुछ गलत हो गया, कृपया पुनः प्रयास करें।)"
         );
       }
-    } catch {
+    } catch (error) {
+      console.error(error);
       setMessage(
         "Server error. Please try again later. (सर्वर त्रुटि, कृपया बाद में पुनः प्रयास करें।)"
       );
@@ -221,7 +262,8 @@ export default function RishikeshOBCCongressWebsite() {
           "Something went wrong. Please try again. (कुछ गलत हो गया, कृपया पुनः प्रयास करें।)"
         );
       }
-    } catch {
+    } catch (error) {
+      console.error(error);
       setVolunteerMessage(
         "Server error. Please try again later. (सर्वर त्रुटि, कृपया बाद में पुनः प्रयास करें।)"
       );
@@ -257,7 +299,8 @@ export default function RishikeshOBCCongressWebsite() {
           result.message || "Complaint ID not found. (शिकायत आईडी नहीं मिली।)"
         );
       }
-    } catch {
+    } catch (error) {
+      console.error(error);
       setTrackingMessage(
         "Server error. Please try again later. (सर्वर त्रुटि, कृपया बाद में पुनः प्रयास करें।)"
       );
